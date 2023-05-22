@@ -1,0 +1,9 @@
+@use "../../globalStyles/globalStyles.scss" as global;
+
+.main{
+  @include global.flex-config(column, center, center, nowrap);
+
+  width: 100vw;
+
+  padding: 50px 1vw;
+}

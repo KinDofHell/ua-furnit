@@ -1,0 +1,170 @@
+@use "../../globalStyles/globalStyles.scss" as global;
+
+.header {
+    @include global.flex-config(row, space-around, center, nowrap);
+
+    width: 100%;
+    height: 75px;
+
+    background-color: global.$gray;
+
+  .burger{
+    @include global.flex-config(column, space-around, center, nowrap);
+    display: none;
+
+    height: 50%;
+
+    padding: 4px;
+    border-radius: 5px;
+
+    background-color: global.$dark-blue;
+
+    span{
+      width: 40px;
+      height: 4px;
+      background-color: white;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: flex;
+    }
+  }
+
+  .burger__opened{
+    transition: all 0.3s;
+
+    background-color: darkred;
+
+    span:first-child, :last-child{
+      opacity: 0;
+    }
+  }
+}
+
+.logo, .navbar, .user, .burger{
+  position: relative;
+  top: 20px;
+}
+
+.logo{
+  @include global.flex-config(row, center, center, nowrap);
+
+  height: 100%;
+
+  font-family: "Sofia", serif;
+  font-size: 35px;
+
+  cursor: default;
+
+  .item_1{
+    @include global.flex-config(row, flex-start, center, nowrap);
+    background-color: global.$blue;
+
+    width: 120px;
+    height: 90%;
+
+    border-radius: 5px;
+    padding: 0 0 0 8px;
+
+    filter: drop-shadow(2px 6px 8px black);
+  }
+
+  .item_2{
+    @include global.flex-config(row, center, center, nowrap);
+    background-color: global.$light-blue;
+
+    height: 40px;
+
+    border-radius: 5px;
+    padding: 1px 5px;
+
+    position: relative;
+    right: 1.6em;
+
+    filter: drop-shadow(10px 6px 20px black);
+  }
+}
+
+.navbar{
+  @include global.flex-config(row, space-around, center, nowrap);
+  display: none;
+
+  width: 30vw;
+  min-width: 500px;
+  height: 60px;
+
+  background-color: global.$blue;
+
+  border-radius: 5px;
+  padding: 4px;
+
+  filter: drop-shadow(10px 2px 15px black);
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+
+  .button_navbar{
+    &:hover{
+      transition: height 0.3s ease, background-color 0.3s ease-in-out, top 0.5s ease, color 0.4s ease-in-out;
+      position: relative;
+      top: 10px;
+
+      height: 80px;
+
+      background-color: global.$dark-blue;
+      color: global.$light-blue
+    }
+
+    @media screen and (min-width: 768px) {
+
+      font-size: calc(16px + 0.5vw);
+
+      border-radius: 5px;
+
+      padding: 0 5px;
+    }
+  }
+}
+
+.user{
+  @include global.flex-config(row, flex-start, center, nowrap);
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 10vw;
+
+    filter: drop-shadow(2px 6px 8px black);
+
+    .avatar{
+      @include global.flex-config(row, center, center, nowrap);
+
+      min-width: 70px;
+      min-height: 70px;
+
+      border-radius: 5px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &:hover{
+        .login{
+          opacity: 1;
+        }
+      }
+
+      .login{
+        opacity: 0;
+
+        height: 50%;
+
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+  }
+}

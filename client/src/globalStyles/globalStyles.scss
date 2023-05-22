@@ -1,0 +1,13 @@
+@mixin flex-config($flex-direction, $justify-content, $align-items, $flex-wrap)
+{
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
+
+$dark-blue: rgb(11, 19, 30);
+$gray: rgb(52, 66, 89);
+$blue: rgb(0, 92, 159);
+$light-blue: rgb(24, 143, 234);

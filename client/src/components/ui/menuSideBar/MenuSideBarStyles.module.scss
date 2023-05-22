@@ -1,0 +1,60 @@
+@use "../../../globalStyles/globalStyles.scss" as global;
+
+.menu__sidebar{
+  @include global.flex-config(column, space-around, center, nowrap);
+
+  position: absolute;
+  top: 75px;
+
+  background-color: global.$dark-blue;
+
+  width: 80%;
+  height: 90vh;
+
+  transition: right 0.3s;
+
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+
+  .admin{
+    @include global.flex-config(column, space-around, center, nowrap);
+
+    width: 100%;
+    span{
+      background-color: white;
+
+      width: 80%;
+      height: 2px;
+
+      margin-bottom: 5px;
+    }
+  }
+
+
+  .navbar{
+    @include global.flex-config(column, space-around, center, nowrap);
+    min-height: 40%;
+  }
+}
+
+.opened__sidebar{
+  right: 0;
+}
+
+.closed__sidebar{
+  display: none;
+}
+
+.button{
+  font-size: 5vw;
+
+  background-color: global.$blue;
+
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.button__login{
+  font-size: 5vw;
+}

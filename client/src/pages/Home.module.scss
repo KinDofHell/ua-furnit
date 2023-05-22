@@ -1,0 +1,7 @@
+@use "../globalStyles/globalStyles.scss" as global;
+
+.home{
+  @include global.flex-config(row, space-around, center, nowrap);
+
+  width: 100%;
+}
