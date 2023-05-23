@@ -1,5 +1,5 @@
 const Contacts = () => {
-  return <section>Hello, World!</section>;
+  return <main>Hello, World!</main>;
 };
 
 export default Contacts;

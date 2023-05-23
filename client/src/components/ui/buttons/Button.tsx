@@ -25,7 +25,7 @@ const Button: FC<ButtonProps> = ({
 }) => {
   if (link)
     return (
-      <Link to={link}>
+      <Link to={link} style={{ width: "auto" }}>
         <button
           className={`${buttonStyles.button} ${className} ${
             isBackground && buttonStyles.button_background

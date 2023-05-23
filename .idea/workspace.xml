@@ -4,33 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="" />
+    <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/buttons/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBarStyles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBarStyles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Headers.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Headers.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Contacts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Questions.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2PcAnGLoI7RaTF8mI15mXHOFBn3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/VS CODE/Master React/client/package.json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Hell\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "D:\\VS CODE\\Master React\\client\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/VS CODE/Master React/client/package.json&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Hell\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\VS CODE\\Master React\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -82,7 +104,9 @@
       <workItem from="1684760269582" duration="36000" />
       <workItem from="1684760540132" duration="2985000" />
       <workItem from="1684763621134" duration="649000" />
-      <workItem from="1684764790565" duration="466000" />
+      <workItem from="1684764790565" duration="1163000" />
+      <workItem from="1684864724784" duration="34000" />
+      <workItem from="1684868337922" duration="5981000" />
     </task>
     <servers />
   </component>

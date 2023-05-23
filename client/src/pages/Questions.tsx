@@ -1,5 +1,5 @@
 const Questions = () => {
-  return <section>Hello, World 2!</section>;
+  return <main>Hello, World 2!</main>;
 };
 
 export default Questions;

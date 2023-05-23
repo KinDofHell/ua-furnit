@@ -4,4 +4,72 @@
   @include global.flex-config(row, space-around, center, nowrap);
 
   width: 100%;
+
+  .categories{
+    @include global.flex-config(column, space-around, space-around, nowrap);
+
+    height: 700px;
+  }
+
+  .arrow{
+    @include global.flex-config(column, space-around, space-around, nowrap);
+
+    cursor: pointer;
+
+    span{
+      transition: transform 0.3s ease-in-out;
+      background-color: white;
+    }
+
+    @media screen and (min-width: 768px) {
+
+      height: 100px;
+
+      span{
+        width: 70px;
+        height: 2px;
+      }
+
+      transition: height 0.3s ease-in-out;
+
+      &:hover{
+        height: 50px;
+      }
+    }
+  }
+
+  .arrow_left{
+    span:first-child{
+      transform: rotate(-45deg);
+    }
+    span:not(:first-child){
+      transform: rotate(45deg);
+    }
+
+    &:hover{
+      span:first-child{
+        transform: rotate(-20deg);
+      }
+      span:not(:first-child){
+        transform: rotate(20deg);
+      }
+    }
+  }
+  .arrow_right{
+    span:first-child{
+      transform: rotate(45deg);
+    }
+    span:not(:first-child){
+      transform: rotate(-45deg);
+    }
+
+    &:hover{
+      span:first-child{
+        transform: rotate(20deg);
+      }
+      span:not(:first-child){
+        transform: rotate(-20deg);
+      }
+    }
+  }
 }

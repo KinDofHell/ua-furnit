@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <div className={headerStyle.header}>
+    <header className={headerStyle.header}>
       <Logo />
       <Navbar />
       <User isAuth={isAuth} />
@@ -36,7 +36,7 @@ const Header = () => {
         isOpen={isBurgerOpened}
         onClickBurgerHandler={onClickBurgerHandler}
       />
-    </div>
+    </header>
   );
 };
 

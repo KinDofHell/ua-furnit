@@ -12,7 +12,7 @@ const Questions = lazy(() => import("./pages/Questions"));
 
 function App() {
   return (
-    <section className="App">
+    <article className="App">
       <Header />
       <Main>
         <Routes>
@@ -35,7 +35,7 @@ function App() {
           />
         </Routes>
       </Main>
-    </section>
+    </article>
   );
 }
 

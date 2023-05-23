@@ -27,7 +27,7 @@ const MenuSideBar: FC<MenuSidebarProps> = ({
           : menuSideBareStyles.closed__sidebar
       }`}
     >
-      <div className={menuSideBareStyles.navbar}>
+      <section className={menuSideBareStyles.navbar}>
         <Button
           label="Головна"
           className={menuSideBareStyles.button}
@@ -46,13 +46,13 @@ const MenuSideBar: FC<MenuSidebarProps> = ({
           onClick={onClickBurgerHandler}
           link="/questions"
         />
-      </div>
-      <div className={menuSideBareStyles.admin}>
+      </section>
+      <section className={menuSideBareStyles.admin}>
         <span></span>
         {isAuth && (
           <Button label="Увійти" className={menuSideBareStyles.button__login} />
         )}
-      </div>
+      </section>
     </aside>
   );
 };
