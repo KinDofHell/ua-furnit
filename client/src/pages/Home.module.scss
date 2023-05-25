@@ -9,7 +9,7 @@
   .categories{
     @include global.flex-config(column, space-around, space-around, nowrap);
 
-    height: 700px;
+    height: 670px;
 
     z-index: 1;
   }

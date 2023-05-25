@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBarStyles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBarStyles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Headers.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Headers.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/main/Main.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.module.scss" afterDir="false" />
     </list>
@@ -101,7 +97,8 @@
       <workItem from="1684864724784" duration="34000" />
       <workItem from="1684868337922" duration="6097000" />
       <workItem from="1684937968539" duration="30000" />
-      <workItem from="1685004253456" duration="1490000" />
+      <workItem from="1685004253456" duration="1565000" />
+      <workItem from="1685006041719" duration="94000" />
     </task>
     <servers />
   </component>
