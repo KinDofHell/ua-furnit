@@ -4,11 +4,14 @@
   @include global.flex-config(row, space-around, center, nowrap);
 
   width: 100%;
+  height: 100%;
 
   .categories{
     @include global.flex-config(column, space-around, space-around, nowrap);
 
     height: 700px;
+
+    z-index: 1;
   }
 
   .arrow{
@@ -21,7 +24,7 @@
       background-color: white;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 769px) {
 
       height: 100px;
 
@@ -35,6 +38,9 @@
       &:hover{
         height: 50px;
       }
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 

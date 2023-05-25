@@ -3,7 +3,13 @@
 .category__section{
   @include global.flex-config(row, space-around, center, nowrap);
 
-  @media screen and (min-width: 768px) {
+  min-width: 300px;
+  width: 90vw;
+  height: 200px;
+
+  z-index: 1;
+
+  @media screen and (min-width: 769px) {
     width: 50vw;
   }
 
@@ -12,14 +18,11 @@
   background-repeat: no-repeat;
 
   border-radius: 5% 5% / 15% 15%;
-
   transition: box-shadow 0.3s ease-out;
 
   &:hover{
     box-shadow: 8px 8px 20px black inset;
   }
-
-  height: 200px;
 
   a{
     @include global.flex-config(row, center, center, nowrap);
@@ -33,11 +36,12 @@
 
   .title{
     @media screen and (min-width: 768px) {
-      font-size: clamp(40px, 50%, 50px);
-
       padding: 2px 4px;
     }
 
+    font-size: clamp(40px, 50%, 50px);
+
+    padding: 4px 6px;
     border-radius: 10% 10% / 50% 50%;
 
     color: global.$dark-blue;

@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/buttons/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/CategorySection/CategorySection.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBarStyles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBarStyles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Headers.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Headers.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Contacts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Contacts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/main/Main.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Questions.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +99,9 @@
       <workItem from="1684763621134" duration="649000" />
       <workItem from="1684764790565" duration="1163000" />
       <workItem from="1684864724784" duration="34000" />
-      <workItem from="1684868337922" duration="5981000" />
+      <workItem from="1684868337922" duration="6097000" />
+      <workItem from="1684937968539" duration="30000" />
+      <workItem from="1685004253456" duration="1490000" />
     </task>
     <servers />
   </component>
