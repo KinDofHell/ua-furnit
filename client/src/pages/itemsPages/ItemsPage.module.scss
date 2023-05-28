@@ -1,0 +1,9 @@
+@use "../../globalStyles/globalStyles.scss" as global;
+
+.items__page{
+  @include global.flex-config(column, space-around, center, nowrap);
+
+  .items{
+    @include global.flex-config(column, space-around, center, nowrap);
+  }
+}

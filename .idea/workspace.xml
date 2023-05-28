@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemSection.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/layouts/main/Main.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/main/Main.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +103,9 @@
       <workItem from="1684868337922" duration="6097000" />
       <workItem from="1684937968539" duration="30000" />
       <workItem from="1685004253456" duration="1565000" />
-      <workItem from="1685006041719" duration="94000" />
+      <workItem from="1685006041719" duration="156000" />
+      <workItem from="1685031613180" duration="17000" />
+      <workItem from="1685272299010" duration="4432000" />
     </task>
     <servers />
   </component>

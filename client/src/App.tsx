@@ -10,6 +10,8 @@ import Home from "./pages/Home";
 const Contacts = lazy(() => import("./pages/Contacts"));
 const Questions = lazy(() => import("./pages/Questions"));
 
+const ItemsPage = lazy(() => import("./pages/itemsPages/ItemsPage"));
+
 function App() {
   return (
     <article className="App">
@@ -17,6 +19,30 @@ function App() {
       <Main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/furniture/kitchen"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemsPage type="kitchen" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/bathroom"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemsPage type="bathroom" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/bedroom"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemsPage type="bedroom" />
+              </Suspense>
+            }
+          />
           <Route
             path="/contacts"
             element={
