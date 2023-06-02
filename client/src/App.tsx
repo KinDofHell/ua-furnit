@@ -23,7 +23,7 @@ function App() {
             path="/furniture/kitchen"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="kitchen" />
+                <ItemsPage type="kitchen" itemsPerPage={3} />
               </Suspense>
             }
           />
@@ -31,7 +31,7 @@ function App() {
             path="/furniture/bathroom"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="bathroom" />
+                <ItemsPage type="bathroom" itemsPerPage={3} />
               </Suspense>
             }
           />
@@ -39,7 +39,7 @@ function App() {
             path="/furniture/bedroom"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="bedroom" />
+                <ItemsPage type="bedroom" itemsPerPage={3} />
               </Suspense>
             }
           />

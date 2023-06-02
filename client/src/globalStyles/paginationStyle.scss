@@ -1,0 +1,39 @@
+@use "./globalStyles.scss" as global;
+
+.pagination {
+  @include global.flex-config(row, space-around, center, nowrap);
+
+  @media screen and (min-width: 768px){
+    width: 40%;
+  }
+
+  width: 70%;
+
+  list-style: none;
+  margin-bottom: 5vh;
+
+  .page_item {
+    cursor: pointer;
+    border-radius: 5px;
+
+    background-color: global.$blue;
+
+    transition: background-color 0.2s ease, color 0.2s linear;
+
+    &:hover{
+      background-color: white;
+      color: global.$dark-blue;
+    }
+  }
+
+  .page_link{
+    @include global.flex-config(row, center, center, nowrap);
+
+    width: 30px;
+    height: 30px;
+  }
+
+  .active{
+    background-color: global.$gray;
+  }
+}

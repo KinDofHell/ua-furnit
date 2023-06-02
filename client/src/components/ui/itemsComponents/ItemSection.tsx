@@ -37,7 +37,7 @@ const ItemSection: FC<ItemSectionProps> = ({
         })`,
       }}
     >
-      <Link to={`/furniture/kitchen/${id}`}></Link>
+      <Link to={`/furniture/${type}/${id}`}></Link>
     </article>
   );
 };
