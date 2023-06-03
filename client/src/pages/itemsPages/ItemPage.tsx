@@ -17,7 +17,10 @@ const ItemPage: FC<ItemPageProps> = ({ type }) => {
 
   return (
     <main className={itemPageStyles.item__page}>
-      <TelegramShareButton url={url} title={"See this one!"}>
+      <TelegramShareButton
+        url="https://ua-furnit.vercel.app/furniture/kitchen"
+        title={"See this one!"}
+      >
         <TelegramIcon size={32} round />
       </TelegramShareButton>
     </main>
