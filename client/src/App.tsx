@@ -11,6 +11,7 @@ const Contacts = lazy(() => import("./pages/Contacts"));
 const Questions = lazy(() => import("./pages/Questions"));
 
 const ItemsPage = lazy(() => import("./pages/itemsPages/ItemsPage"));
+const ItemPage = lazy(() => import("./pages/itemsPages/ItemPage"));
 
 function App() {
   return (
@@ -23,7 +24,15 @@ function App() {
             path="/furniture/kitchen"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="kitchen" itemsPerPage={3} />
+                <ItemsPage type="kitchen" itemsPerPage={6} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/kitchen/:id"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemPage type="kitchen" />
               </Suspense>
             }
           />
@@ -31,7 +40,15 @@ function App() {
             path="/furniture/bathroom"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="bathroom" itemsPerPage={3} />
+                <ItemsPage type="bathroom" itemsPerPage={6} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/bathroom/:id"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemPage type="bathroom" />
               </Suspense>
             }
           />
@@ -39,7 +56,15 @@ function App() {
             path="/furniture/bedroom"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="bedroom" itemsPerPage={3} />
+                <ItemsPage type="bedroom" itemsPerPage={6} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/bedroom/:id"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemPage type="bedroom" />
               </Suspense>
             }
           />

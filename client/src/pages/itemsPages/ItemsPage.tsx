@@ -4,7 +4,7 @@ import "../../globalStyles/paginationStyle.scss";
 import { FC, HTMLAttributes, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-import { Paginate, handlePageClick } from "../../util/Paginate";
+import { Paginate, handlePageClick } from "../../utils/Paginate";
 
 import ItemsSection from "../../components/ui/itemsComponents/ItemsSection";
 

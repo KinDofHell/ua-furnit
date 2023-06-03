@@ -1,0 +1,6 @@
+@use "../../globalStyles/globalStyles.scss" as global;
+
+.item__page{
+  @include global.flex-config(column, space-around, center, nowrap);
+
+}
