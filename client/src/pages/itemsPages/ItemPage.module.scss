@@ -3,4 +3,40 @@
 .item__page{
   @include global.flex-config(column, space-around, center, nowrap);
 
+  .images{
+    @include global.flex-config(column, space-around, center, nowrap);
+
+    width: 100%;
+
+    img{
+      width: 80vw;
+      height: 80vh;
+
+      @media screen and (max-width: 768px){
+        width: 85vw;
+        height: 50vh;
+      }
+      margin-bottom: 2vh;
+    }
+  }
+
+  .share__btns{
+    @include global.flex-config(column, space-around, center, nowrap);
+
+    width: 60px;
+
+    background-color: global.$blue;
+
+    position: fixed;
+    top: 82vh;
+    right: 55px;
+
+    @media screen and (max-width: 768px){
+      top: 80vh;
+      right: 10px;
+    }
+
+    padding: 10px 5px;
+    border-radius: 10px;
+  }
 }

@@ -1,8 +1,19 @@
 import itemPageStyles from "./ItemPage.module.scss";
 
-import { TelegramShareButton, TelegramIcon } from "react-share";
+import kitchenExample from "../../assets/imgs/kitchenExample.png";
+import bathroomExample from "../../assets/imgs/bathroomExample.jpg";
+import bedroomExample from "../../assets/imgs/bedroomExample.jpg";
 
-import { FC, HTMLAttributes } from "react";
+import {
+  TelegramShareButton,
+  TelegramIcon,
+  ViberShareButton,
+  ViberIcon,
+  FacebookShareButton,
+  FacebookIcon,
+} from "react-share";
+
+import { FC, HTMLAttributes, Key } from "react";
 import { useParams } from "react-router-dom";
 
 type TypeVariant = "kitchen" | "bathroom" | "bedroom";
@@ -15,14 +26,37 @@ const ItemPage: FC<ItemPageProps> = ({ type }) => {
   const { id } = useParams();
   const url: string = window.location.href;
 
+  const data: string[] = [kitchenExample, bathroomExample, bedroomExample];
+
   return (
     <main className={itemPageStyles.item__page}>
-      <TelegramShareButton
-        url="https://ua-furnit.vercel.app/furniture/kitchen"
-        title={"See this one!"}
-      >
-        <TelegramIcon size={32} round />
-      </TelegramShareButton>
+      <section className={itemPageStyles.images}>
+        {data.map((obj: string, index: Key) => (
+          <img src={obj} alt={obj} key={index} />
+        ))}
+      </section>
+      <section className={itemPageStyles.share__btns}>
+        <TelegramShareButton
+          url="https://ua-furnit.vercel.app/furniture/kitchen"
+          title={"Look at this!"}
+        >
+          <TelegramIcon size={32} round />
+        </TelegramShareButton>
+        <hr style={{ width: "100%", marginBottom: "4px" }} />
+        <ViberShareButton
+          url="https://ua-furnit.vercel.app/furniture/kitchen"
+          title={"Look at this!"}
+        >
+          <ViberIcon size={32} round />
+        </ViberShareButton>
+        <hr style={{ width: "100%", marginBottom: "4px" }} />
+        <FacebookShareButton
+          url="https://ua-furnit.vercel.app/furniture/kitchen"
+          title={"Look at this!"}
+        >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+      </section>
     </main>
   );
 };
