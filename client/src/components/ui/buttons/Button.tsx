@@ -11,6 +11,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   isDanger?: boolean;
   isSuccess?: boolean;
   isBackground?: boolean;
+  type?: "submit";
 }
 
 const Button: FC<ButtonProps> = ({
@@ -21,6 +22,7 @@ const Button: FC<ButtonProps> = ({
   isSuccess,
   isBackground,
   className,
+  type,
   ...props
 }) => {
   if (link)
@@ -48,6 +50,7 @@ const Button: FC<ButtonProps> = ({
           isDanger ? buttonStyles.danger : isSuccess && buttonStyles.success
         }`}
         onClick={onClick}
+        type={type}
         {...props}
       >
         {label}

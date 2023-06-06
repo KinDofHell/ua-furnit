@@ -7,6 +7,8 @@ import ReactPaginate from "react-paginate";
 import { Paginate, handlePageClick } from "../../utils/Paginate";
 
 import ItemsSection from "../../components/ui/itemsComponents/ItemsSection";
+import Button from "../../components/ui/buttons/Button";
+import ImageModal from "../../components/modal/ImageModal";
 
 type TypeVariant = "kitchen" | "bathroom" | "bedroom";
 type CurrentItemType = object;
@@ -38,12 +40,38 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
   const [itemOffset, setItemOffset] = useState<number>(0);
   const [currentItems, pageCount] = Paginate(data, itemsPerPage, itemOffset);
 
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [images, setImages] = useState<File[]>([]);
+
+  const handleImageAdd = (newImages: FileList | File[]) => {
+    const fileList = Array.from(newImages) as File[];
+    setImages((prevImages) => [...prevImages, ...fileList]);
+  };
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <main className={itemsPageStyles.items__page}>
       <ItemsSection
         className={itemsPageStyles.items}
         currentItems={currentItems}
         type={type}
+      />
+      <Button
+        label="+"
+        className={itemsPageStyles.add__btn}
+        onClick={openModal}
+      />
+      <ImageModal
+        isOpen={modalIsOpen}
+        onClose={closeModal}
+        onImageAdd={handleImageAdd}
       />
       <ReactPaginate
         nextLabel=">"

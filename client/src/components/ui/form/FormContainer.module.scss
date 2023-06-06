@@ -1,0 +1,30 @@
+@use "../../../globalStyles/globalStyles.scss" as global;
+
+.form {
+  @include global.flex-config(column, space-around, center, nowrap);
+  h2{
+    font-size: 30px;
+
+    border-bottom: 1px solid white;
+    text-align: center;
+    padding: 10px 2px;
+
+    width: 100%;
+  }
+
+  .fields{
+    @include global.flex-config(column, space-around, center, nowrap);
+
+    padding: 10px 5px;
+
+    label{
+      margin-bottom: 5px;
+
+      text-decoration: underline;
+    }
+
+    input{
+      margin-bottom: 1vh;
+    }
+  }
+}

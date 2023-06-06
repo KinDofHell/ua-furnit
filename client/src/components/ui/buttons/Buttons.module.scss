@@ -4,17 +4,16 @@
   background-color: transparent;
   border: none;
 
+  font-size: 20px;
+
+
   min-width: max-content;
 
   cursor: pointer;
   top: 0;
   right: 0;
-  left: 0;
-  bottom: 0;
 
   @media screen and (min-width: 786px){
-    font-size: 20px;
-
     padding: 0 2px;
 
     border-radius: 5px;
@@ -27,12 +26,22 @@
 .button_background{
   background-color: global.$dark-blue;
 }
-
+.danger, .success{
+  transition: background-color 0.3s ease-in;
+}
 .danger{
   background-color: darkred;
   color: white;
+
+  &:hover{
+    background-color: red;
+  }
 }
 .success{
   background-color: green;
   color: white;
+
+  &:hover{
+    background-color: darkgreen;
+  }
 }
