@@ -30,7 +30,6 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, onImageAdd }) => {
     if (coverImage) {
       selectedImages.push(...Array.from(coverImage));
     }
-    console.log(selectedImages);
     onImageAdd(selectedImages);
     reset();
     onClose();
