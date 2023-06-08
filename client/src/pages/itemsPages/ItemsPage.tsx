@@ -1,7 +1,7 @@
 import itemsPageStyles from "./ItemsPage.module.scss";
 import "../../globalStyles/paginationStyle.scss";
 
-import { FC, HTMLAttributes, useState } from "react";
+import { FC, HTMLAttributes, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 import { Paginate, handlePageClick } from "../../utils/Paginate";
@@ -9,6 +9,7 @@ import { Paginate, handlePageClick } from "../../utils/Paginate";
 import ItemsSection from "../../components/ui/itemsComponents/ItemsSection";
 import Button from "../../components/ui/buttons/Button";
 import ImageModal from "../../components/modal/ImageModal";
+import { useDataStore } from "../../hooks/useDataStore";
 
 type TypeVariant = "kitchen" | "bathroom" | "bedroom";
 type CurrentItemType = object;
@@ -20,23 +21,30 @@ interface ItemsPageProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
-  const data: CurrentItemsType = [
-    { id: "afsdfas", rating: 10 },
-    { id: "afsdfas", rating: 10 },
-    {
-      id: "afsdfas",
-      rating: 10,
-    },
-    { id: "afsdfas", rating: 10 },
-    { id: "afsdfas", rating: 10 },
-    { id: "afsdfas", rating: 10 },
-    {
-      id: "afsdfas",
-      rating: 10,
-    },
-    { id: "a123123s", rating: 10 },
-    { id: "asdfsdasdasdasdas", rating: 10 },
-  ];
+  // const data: CurrentItemsType = [
+  //   { id: "afsdfas", rating: 10 },
+  //   { id: "afsdfas", rating: 10 },
+  //   {
+  //     id: "afsdfas",
+  //     rating: 10,
+  //   },
+  //   { id: "afsdfas", rating: 10 },
+  //   { id: "afsdfas", rating: 10 },
+  //   { id: "afsdfas", rating: 10 },
+  //   {
+  //     id: "afsdfas",
+  //     rating: 10,
+  //   },
+  //   { id: "a123123s", rating: 10 },
+  //   { id: "asdfsdasdasdasdas", rating: 10 },
+  // ];
+
+  const { data, fetchData } = useDataStore();
+
+  useEffect(() => {
+    fetchData("/api/furniture/");
+  }, []);
+
   const [itemOffset, setItemOffset] = useState<number>(0);
   const [currentItems, pageCount] = Paginate(data, itemsPerPage, itemOffset);
 
@@ -56,6 +64,10 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
     setModalIsOpen(false);
   };
 
+  const refreshData = () => {
+    fetchData("/api/furniture");
+  };
+
   return (
     <main className={itemsPageStyles.items__page}>
       <ItemsSection
@@ -72,6 +84,7 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
         isOpen={modalIsOpen}
         onClose={closeModal}
         onImageAdd={handleImageAdd}
+        refreshData={refreshData}
       />
       <ReactPaginate
         nextLabel=">"

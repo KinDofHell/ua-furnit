@@ -1,36 +1,65 @@
 import imageModalStyles from "./ImageModal.module.scss";
 
-import { FC } from "react";
+import { FC, Key, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { useForm, Controller } from "react-hook-form";
+import axiosInstance from "../../utils/axiosInstance";
+import { useDataStore } from "../../hooks/useDataStore";
+
 import FormContainer from "../ui/form/FormContainer";
 import Button from "../ui/buttons/Button";
+
+interface CategoriesType {
+  [key: string]: any;
+}
 
 interface ImageModalProps {
   isOpen: boolean;
   onClose: () => void;
   onImageAdd: (files: File[]) => void;
+  refreshData: () => void;
 }
 
 interface ImageFormValues {
-  images: FileList | null;
-  coverImage: FileList | null;
+  images: string[] | null;
+  coverImage: string | null;
+  category: string;
 }
 
-const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, onImageAdd }) => {
+const ImageModal: FC<ImageModalProps> = ({
+  isOpen,
+  onClose,
+  onImageAdd,
+  refreshData,
+}) => {
   const { handleSubmit, control, reset } = useForm<ImageFormValues>();
+  const { data, fetchData } = useDataStore();
 
-  const onSubmit = (data: ImageFormValues) => {
-    const { images, coverImage } = data;
-    const selectedImages: File[] = [];
+  const [isCategoriesLoad, setIsCategoriesLoad] = useState<boolean>(false);
 
-    if (images) {
-      selectedImages.push(...Array.from(images));
+  useEffect(() => {
+    fetchData("/api/category/").then((res) => setIsCategoriesLoad(true));
+  }, []);
+
+  const onSubmit = async (data: ImageFormValues) => {
+    const { images, coverImage, category } = data;
+
+    const requestData = {
+      category,
+      coverImage,
+      images,
+    };
+
+    try {
+      const response = await axiosInstance.post("/api/furniture", requestData);
+      console.log("Furniture created:", response.data);
+      refreshData();
+      // Handle the response as needed
+    } catch (error) {
+      console.error("Error creating furniture:", error);
+      // Handle the error as needed
     }
-    if (coverImage) {
-      selectedImages.push(...Array.from(coverImage));
-    }
-    onImageAdd(selectedImages);
+
     reset();
     onClose();
   };
@@ -60,7 +89,7 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, onImageAdd }) => {
           outline: "none",
           padding: "20px",
           width: "300px",
-          height: "200px",
+          height: "280px",
           overflowX: "hidden",
           overflowY: "hidden",
           backgroundColor: "rgb(52, 66, 89)",
@@ -72,17 +101,56 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, onImageAdd }) => {
         method="POST"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <label htmlFor="category">Категорія</label>
+        <Controller
+          name="category"
+          control={control}
+          defaultValue=""
+          rules={{
+            required: "Це поле обов'язкове!",
+            minLength: {
+              value: 3,
+              message: "Мінімум 3 символи!",
+            },
+          }}
+          render={({ field, fieldState: { error } }) => (
+            <div>
+              <select
+                id="category"
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                value={field.value}
+              >
+                <option value="">Оберіть категорію</option>
+                {isCategoriesLoad &&
+                  data.map((obj: CategoriesType, index: Key) => (
+                    <option value={obj._id} key={index}>
+                      {obj.name}
+                    </option>
+                  ))}
+              </select>
+              {error && <p>{error.message}</p>}{" "}
+            </div>
+          )}
+        />
         <label htmlFor="coverImage">Обкладинка</label>
         <Controller
           name="coverImage"
           control={control}
           defaultValue={null}
+          rules={{
+            required: "Обкладинка обов'язкова!",
+          }}
           render={({ field }) => (
             <input
               id="coverImage"
               type="file"
               accept="image/*"
-              onChange={(e) => field.onChange(e.target.files)}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                const fileName = file ? file.name : null;
+                field.onChange(fileName);
+              }}
               onBlur={field.onBlur}
             />
           )}
@@ -92,13 +160,27 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, onImageAdd }) => {
           name="images"
           control={control}
           defaultValue={null}
+          rules={{
+            validate: {
+              validateImages: (value) => {
+                if (value && value.length === 0)
+                  return "Оберіть хоча б одну картинку!";
+                return true;
+              },
+            },
+          }}
           render={({ field }) => (
             <input
               id="images"
               type="file"
               multiple
               accept="image/*"
-              onChange={(e) => field.onChange(e.target.files)}
+              onChange={(e) => {
+                const files = e.target.files;
+                const fileList = files ? Array.from(files) : [];
+                const fileNames = fileList.map((file) => file.name);
+                field.onChange(fileNames);
+              }}
               onBlur={field.onBlur}
             />
           )}

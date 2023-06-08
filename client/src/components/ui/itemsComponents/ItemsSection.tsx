@@ -2,7 +2,7 @@ import { FC, HTMLAttributes, Key, useEffect, useState } from "react";
 import ItemSection from "./ItemSection";
 
 type TypeVariant = "kitchen" | "bathroom" | "bedroom";
-type CurrentItemType = { id: string; rating: number };
+type CurrentItemType = { _id: string; rating: number };
 type CurrentItemsType = Array<CurrentItemType>;
 
 interface ItemsSectionProps extends HTMLAttributes<HTMLDivElement> {
@@ -21,7 +21,7 @@ const ItemsSection: FC<ItemsSectionProps> = ({
       <section className={className}>
         {currentItems.map((obj: CurrentItemType, index: Key) => (
           <ItemSection
-            id={obj.id}
+            id={obj._id}
             rating={obj.rating}
             type={type}
             key={index}

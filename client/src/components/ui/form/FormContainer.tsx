@@ -21,7 +21,7 @@ const FormContainer: FC<FormProps> = ({
   return (
     <form method={method} className={formStyles.form} onSubmit={onSubmit}>
       <h2>{title}</h2>
-      <section className={formStyles.fields}>{children}</section>
+      {children}
     </form>
   );
 };

@@ -4,15 +4,12 @@ const { Furniture } = require("../models/exports");
 const validateFurniture = [
   body("category").notEmpty().withMessage("Category is required!"),
   body("coverImage").notEmpty().withMessage("Cover image is required!"),
-  body("images")
-    .isArray({ min: 1 })
-    .withMessage("Images must be an array with at least one element")
-    .custom((value) => {
-      if (value.some((item) => typeof item !== "string")) {
-        throw new Error("Images must be an array of strings");
-      }
-      return true;
-    }),
+  body("images").custom((value, { req }) => {
+    if (!Array.isArray(value) || value.length === 0) {
+      throw new Error("Images must be an array with at least one element");
+    }
+    return true;
+  }),
 ];
 
 exports.createFurniture = async (req, res) => {
@@ -21,7 +18,7 @@ exports.createFurniture = async (req, res) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty())
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({ message: "Error!", errors: errors.array() });
   try {
     const furniture = await Furniture.create(req.body);
     res.status(201).json(furniture);
@@ -69,7 +66,7 @@ exports.deleteFurniture = async (req, res) => {
 
 exports.getAllFurniture = async (req, res) => {
   try {
-    const furniture = await Furniture.find();
+    const furniture = await Furniture.find().sort({ $natural: -1 });
     res.json(furniture);
   } catch (error) {
     console.error("Error: ", error);
