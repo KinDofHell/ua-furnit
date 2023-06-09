@@ -9,13 +9,19 @@
   .categories{
     @include global.flex-config(column, space-around, space-around, nowrap);
 
-    height: 670px;
+    height: 600px;
+
+    @media screen and (min-width: 768px) {
+      height: 670px;
+    }
 
     z-index: 1;
   }
 
   .arrow{
     @include global.flex-config(column, space-around, space-around, nowrap);
+
+    min-width: 70px;
 
     cursor: pointer;
 
@@ -77,5 +83,9 @@
         transform: rotate(-20deg);
       }
     }
+  }
+
+  .hide{
+    display: none;
   }
 }
