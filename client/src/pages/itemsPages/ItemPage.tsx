@@ -14,16 +14,14 @@ import {
 } from "react-share";
 
 import { FC, HTMLAttributes, Key } from "react";
-import { useParams } from "react-router-dom";
 
-type TypeVariant = "kitchen" | "bathroom" | "bedroom";
+import { TypeVariant } from "../../types/furnitureTypes";
 
 interface ItemPageProps extends HTMLAttributes<HTMLDivElement> {
   type: TypeVariant;
 }
 
 const ItemPage: FC<ItemPageProps> = ({ type }) => {
-  const { id } = useParams();
   const url: string = window.location.href;
 
   const data: string[] = [kitchenExample, bathroomExample, bedroomExample];
@@ -36,24 +34,15 @@ const ItemPage: FC<ItemPageProps> = ({ type }) => {
         ))}
       </section>
       <section className={itemPageStyles.share__btns}>
-        <TelegramShareButton
-          url="https://ua-furnit.vercel.app/furniture/kitchen"
-          title={"Look at this!"}
-        >
+        <TelegramShareButton url={url} title={"Look at this!"}>
           <TelegramIcon size={32} round />
         </TelegramShareButton>
         <hr style={{ width: "100%", marginBottom: "4px" }} />
-        <ViberShareButton
-          url="https://ua-furnit.vercel.app/furniture/kitchen"
-          title={"Look at this!"}
-        >
+        <ViberShareButton url={url} title={"Look at this!"}>
           <ViberIcon size={32} round />
         </ViberShareButton>
         <hr style={{ width: "100%", marginBottom: "4px" }} />
-        <FacebookShareButton
-          url="https://ua-furnit.vercel.app/furniture/kitchen"
-          title={"Look at this!"}
-        >
+        <FacebookShareButton url={url} title={"Look at this!"}>
           <FacebookIcon size={32} round />
         </FacebookShareButton>
       </section>

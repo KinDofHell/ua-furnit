@@ -1,12 +1,11 @@
 import itemSectionStyles from "./ItemSection.module.scss";
-import kitchenExample from "../../../assets/imgs/kitchenExample.png";
-import bathroomExample from "../../../assets/imgs/bathroomExample.jpg";
-import bedroomExample from "../../../assets/imgs/bedroomExample.jpg";
 
-import { FC, HTMLAttributes, useEffect, useState } from "react";
+import kitchenExample from "../../../assets/imgs/kitchenExample.png";
+
+import { FC, HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 
-type TypeVariant = "kitchen" | "bathroom" | "bedroom";
+import { TypeVariant } from "../../../types/furnitureTypes";
 
 interface ItemSectionProps extends HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -26,15 +25,7 @@ const ItemSection: FC<ItemSectionProps> = ({
     <article
       className={itemSectionStyles.item__section}
       style={{
-        backgroundImage: `url(${
-          coverImage
-            ? coverImage
-            : type === "kitchen"
-            ? kitchenExample
-            : type === "bathroom"
-            ? bathroomExample
-            : bedroomExample
-        })`,
+        backgroundImage: `url(${kitchenExample})`,
       }}
     >
       <Link to={`/furniture/${type}/${id}`}></Link>

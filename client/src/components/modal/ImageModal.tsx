@@ -26,12 +26,7 @@ interface ImageFormValues {
   category: string;
 }
 
-const ImageModal: FC<ImageModalProps> = ({
-  isOpen,
-  onClose,
-  onImageAdd,
-  refreshData,
-}) => {
+const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
   const { handleSubmit, control, reset } = useForm<ImageFormValues>();
   const { data, fetchData } = useDataStore();
 

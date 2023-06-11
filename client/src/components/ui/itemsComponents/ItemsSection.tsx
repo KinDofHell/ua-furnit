@@ -1,9 +1,12 @@
-import { FC, HTMLAttributes, Key, useEffect, useState } from "react";
-import ItemSection from "./ItemSection";
+import { FC, HTMLAttributes, Key } from "react";
 
-type TypeVariant = "kitchen" | "bathroom" | "bedroom";
-type CurrentItemType = { _id: string; rating: number };
-type CurrentItemsType = Array<CurrentItemType>;
+import {
+  TypeVariant,
+  CurrentItemsType,
+  CurrentItemType,
+} from "../../../types/furnitureTypes";
+
+import ItemSection from "./ItemSection";
 
 interface ItemsSectionProps extends HTMLAttributes<HTMLDivElement> {
   type: TypeVariant;

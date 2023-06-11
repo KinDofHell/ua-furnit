@@ -1,0 +1,46 @@
+@use "../globalStyles/globalStyles.scss" as global;
+
+.notFound {
+  @include global.flex-config(row, center, center, nowrap);
+
+  width: 100%;
+  height: 50vh;
+
+  .error {
+    @include global.flex-config(column, flex-start, center, nowrap);
+
+    padding: 2px 10px;
+    border-radius: 5px;
+
+    height: 120px;
+
+    background-color: global.$gray;
+
+    h2 {
+      font-size: 50px;
+      color: red;
+    }
+
+    section {
+      @include global.flex-config(column, space-between, center, nowrap);
+
+      height: 50px;
+
+      p {
+        font-size: 20px;
+      }
+
+      .btn{
+        background-color: global.$light-blue;
+
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+
+        &:hover{
+          background-color: global.$dark-blue;
+        }
+      }
+    }
+  }
+
+}

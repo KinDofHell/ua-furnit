@@ -1,8 +1,13 @@
 import homeStyles from "./Home.module.scss";
 import CategorySection from "../components/ui/CategorySection/CategorySection";
 
-import kitchen from "../assets/imgs/kitchen.png";
-import bathroom from "../assets/imgs/bathroom.jpg";
+import kitchens from "../assets/imgs/kitchen.png";
+import wardrobes from "../assets/imgs/wardrobes.webp";
+import nightstands from "../assets/imgs/nightstands.jpg";
+import shelves from "../assets/imgs/shelves.jpg";
+import tables from "../assets/imgs/tables.jpeg";
+import dressers from "../assets/imgs/dressers.webp";
+
 import bedroom from "../assets/imgs/bedroom.webp";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -44,32 +49,32 @@ const Home = () => {
     {
       title: "Кухні",
       link: "/furniture/kitchens",
-      background: kitchen,
+      background: kitchens,
     },
     {
       title: "Шафи",
       link: "/furniture/wardrobes",
-      background: bathroom,
+      background: wardrobes,
     },
     {
       title: "Тумбочки",
       link: "/furniture/nightstands",
-      background: bedroom,
+      background: nightstands,
     },
     {
       title: "Полиці",
       link: "/furniture/shelves",
-      background: kitchen,
+      background: shelves,
     },
     {
       title: "Столи",
       link: "/furniture/tables",
-      background: bathroom,
+      background: tables,
     },
     {
       title: "Комоди",
-      link: "/furniture/commodes",
-      background: bedroom,
+      link: "/furniture/dressers",
+      background: dressers,
     },
   ];
 

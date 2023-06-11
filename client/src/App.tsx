@@ -12,6 +12,7 @@ const Questions = lazy(() => import("./pages/Questions"));
 
 const ItemsPage = lazy(() => import("./pages/itemsPages/ItemsPage"));
 const ItemPage = lazy(() => import("./pages/itemsPages/ItemPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/furniture/kitchen"
+            path="/furniture/kitchens"
             element={
               <Suspense fallback={<>Loading...</>}>
                 <ItemsPage type="kitchen" itemsPerPage={6} />
@@ -29,7 +30,7 @@ function App() {
             }
           />
           <Route
-            path="/furniture/kitchen/:id"
+            path="/furniture/kitchens/:id"
             element={
               <Suspense fallback={<>Loading...</>}>
                 <ItemPage type="kitchen" />
@@ -37,34 +38,82 @@ function App() {
             }
           />
           <Route
-            path="/furniture/bathroom"
+            path="/furniture/wardrobes"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="bathroom" itemsPerPage={6} />
+                <ItemsPage type="wardrobes" itemsPerPage={6} />
               </Suspense>
             }
           />
           <Route
-            path="/furniture/bathroom/:id"
+            path="/furniture/wardrobes/:id"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemPage type="bathroom" />
+                <ItemPage type="wardrobes" />
               </Suspense>
             }
           />
           <Route
-            path="/furniture/bedroom"
+            path="/furniture/nightstands"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="bedroom" itemsPerPage={6} />
+                <ItemsPage type="nightstands" itemsPerPage={6} />
               </Suspense>
             }
           />
           <Route
-            path="/furniture/bedroom/:id"
+            path="/furniture/nightstands/:id"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemPage type="bedroom" />
+                <ItemPage type="nightstands" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/shelves"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemsPage type="shelves" itemsPerPage={6} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/shelves/:id"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemPage type="shelves" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/tables"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemsPage type="tables" itemsPerPage={6} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/tables/:id"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemPage type="tables" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/dressers"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemsPage type="dressers" itemsPerPage={6} />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/furniture/dressers/:id"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <ItemPage type="dressers" />
               </Suspense>
             }
           />
@@ -81,6 +130,14 @@ function App() {
             element={
               <Suspense fallback={<>Loading...</>}>
                 <Questions />
+              </Suspense>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<>Loading...</>}>
+                <NotFound />
               </Suspense>
             }
           />

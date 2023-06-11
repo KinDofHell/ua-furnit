@@ -5,15 +5,13 @@ import { FC, HTMLAttributes, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 import { Paginate, handlePageClick } from "../../utils/Paginate";
+import { useDataStore } from "../../hooks/useDataStore";
+
+import { TypeVariant } from "../../types/furnitureTypes";
 
 import ItemsSection from "../../components/ui/itemsComponents/ItemsSection";
 import Button from "../../components/ui/buttons/Button";
 import ImageModal from "../../components/modal/ImageModal";
-import { useDataStore } from "../../hooks/useDataStore";
-
-type TypeVariant = "kitchen" | "bathroom" | "bedroom";
-type CurrentItemType = object;
-type CurrentItemsType = Array<CurrentItemType>;
 
 interface ItemsPageProps extends HTMLAttributes<HTMLDivElement> {
   type: TypeVariant;
@@ -21,28 +19,10 @@ interface ItemsPageProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
-  // const data: CurrentItemsType = [
-  //   { id: "afsdfas", rating: 10 },
-  //   { id: "afsdfas", rating: 10 },
-  //   {
-  //     id: "afsdfas",
-  //     rating: 10,
-  //   },
-  //   { id: "afsdfas", rating: 10 },
-  //   { id: "afsdfas", rating: 10 },
-  //   { id: "afsdfas", rating: 10 },
-  //   {
-  //     id: "afsdfas",
-  //     rating: 10,
-  //   },
-  //   { id: "a123123s", rating: 10 },
-  //   { id: "asdfsdasdasdasdas", rating: 10 },
-  // ];
-
   const { data, fetchData } = useDataStore();
 
   useEffect(() => {
-    fetchData("/api/furniture/");
+    fetchData("/api/furniture/").then((res) => console.log("Data loaded!"));
   }, []);
 
   const [itemOffset, setItemOffset] = useState<number>(0);
@@ -65,7 +45,7 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
   };
 
   const refreshData = () => {
-    fetchData("/api/furniture");
+    fetchData("/api/furniture").then((res) => console.log());
   };
 
   return (
