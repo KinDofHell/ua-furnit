@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useDataStore.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/vite.config.ts.timestamp-1686577646630-979aa6edcd2ec.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/modal/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modal/ImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/buttons/Buttons.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/buttons/Buttons.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/form/FormContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/form/FormContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useDataStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useDataStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/types/furnitureTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/types/furnitureTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,26 +42,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/VS CODE/Master React/server&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\wildg\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\VS CODE\\Master React\\client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
+    "last_opened_file_path": "D:/VS CODE/webpack",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\wildg\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "D:\\VS CODE\\Master React\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -154,7 +159,12 @@
       <workItem from="1686150000397" duration="68000" />
       <workItem from="1686156654381" duration="3627000" />
       <workItem from="1686216740288" duration="4048000" />
-      <workItem from="1686221174612" duration="2605000" />
+      <workItem from="1686221174612" duration="3257000" />
+      <workItem from="1686305596381" duration="2791000" />
+      <workItem from="1686493117150" duration="4768000" />
+      <workItem from="1686498404084" duration="598000" />
+      <workItem from="1686564495836" duration="21000" />
+      <workItem from="1686565860257" duration="20097000" />
     </task>
     <servers />
   </component>

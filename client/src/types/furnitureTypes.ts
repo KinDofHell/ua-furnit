@@ -6,5 +6,9 @@ export type TypeVariant =
   | "tables"
   | "dressers";
 
-export type CurrentItemType = { _id: string; rating: number };
+export type CurrentItemType = {
+  _id: string;
+  rating: number;
+  coverImage: string;
+};
 export type CurrentItemsType = Array<CurrentItemType>;

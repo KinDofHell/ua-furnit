@@ -1,27 +1,77 @@
 const { validationResult, body } = require("express-validator");
 const { Furniture } = require("../models/exports");
 
-const validateFurniture = [
-  body("category").notEmpty().withMessage("Category is required!"),
-  body("coverImage").notEmpty().withMessage("Cover image is required!"),
-  body("images").custom((value, { req }) => {
-    if (!Array.isArray(value) || value.length === 0) {
-      throw new Error("Images must be an array with at least one element");
+const cloudinary = require("cloudinary").v2;
+const formidable = require("formidable");
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.API,
+  api_secret: process.env.API_SECRET,
+});
+
+const formParser = async (req) => {
+  try {
+    const imagesPath = [];
+    let category = "";
+    const form = formidable({ multiples: true });
+
+    await new Promise((resolve, reject) => {
+      form.parse(req, (err, fields, files) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        console.log("field: ", fields.category);
+        category = fields.category;
+        files.images.forEach((image) => {
+          const path = image.filepath;
+          console.log("Path in controller: " + path);
+          imagesPath.push(path);
+        });
+
+        resolve();
+      });
+    });
+
+    return [imagesPath, category];
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const uploadCloudinary = async (images) => {
+  const resultArr = [];
+
+  console.log("Images in uploadCloudinary:" + images);
+  try {
+    for (const image of images) {
+      console.log("Images in uploadCloudinary single:" + image);
+      const result = await cloudinary.uploader.upload(image, {
+        folder: "furniture",
+      });
+      resultArr.push(result.secure_url);
+      console.log("Result in cloudUpload:" + resultArr);
     }
-    return true;
-  }),
-];
+    return resultArr;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 exports.createFurniture = async (req, res) => {
-  await Promise.all(validateFurniture.map((validator) => validator.run(req)));
-
-  const errors = validationResult(req);
-
-  if (!errors.isEmpty())
-    return res.status(400).json({ message: "Error!", errors: errors.array() });
   try {
-    const furniture = await Furniture.create(req.body);
-    res.status(201).json(furniture);
+    const [imagesPath, category] = await formParser(req);
+    const imagesUrl = await Promise.all(await uploadCloudinary(imagesPath));
+    console.log("Images Url: " + imagesUrl);
+    if (imagesUrl.length > 0) {
+      const furniture = await Furniture.create({
+        category: category,
+        coverImage: imagesUrl[0],
+        images: imagesUrl,
+      });
+      res.status(201).json(furniture);
+    }
   } catch (err) {
     res.status(500).json(err);
   }

@@ -45,7 +45,7 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
   };
 
   const refreshData = () => {
-    fetchData("/api/furniture").then((res) => console.log());
+    fetchData("/api/furniture").then(() => console.log("Data Loaded!"));
   };
 
   return (

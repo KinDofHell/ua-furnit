@@ -25,7 +25,7 @@ const ItemSection: FC<ItemSectionProps> = ({
     <article
       className={itemSectionStyles.item__section}
       style={{
-        backgroundImage: `url(${kitchenExample})`,
+        backgroundImage: `url(${coverImage})`,
       }}
     >
       <Link to={`/furniture/${type}/${id}`}></Link>

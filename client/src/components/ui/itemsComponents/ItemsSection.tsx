@@ -12,12 +12,14 @@ interface ItemsSectionProps extends HTMLAttributes<HTMLDivElement> {
   type: TypeVariant;
   currentItems: CurrentItemsType;
   className?: string;
+  coverImage: string;
 }
 
 const ItemsSection: FC<ItemsSectionProps> = ({
   type,
   currentItems,
   className,
+  coverImage,
 }) => {
   return (
     <>
@@ -28,6 +30,7 @@ const ItemsSection: FC<ItemsSectionProps> = ({
             rating={obj.rating}
             type={type}
             key={index}
+            coverImage={obj.coverImage}
           />
         ))}
       </section>

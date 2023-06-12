@@ -28,25 +28,34 @@ interface ImageFormValues {
 
 const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
   const { handleSubmit, control, reset } = useForm<ImageFormValues>();
-  const { data, fetchData } = useDataStore();
+  const { categories, fetchCategories } = useDataStore();
 
   const [isCategoriesLoad, setIsCategoriesLoad] = useState<boolean>(false);
 
   useEffect(() => {
-    fetchData("/api/category/").then((res) => setIsCategoriesLoad(true));
+    fetchCategories("/api/category/").then(() => setIsCategoriesLoad(true));
   }, []);
 
   const onSubmit = async (data: ImageFormValues) => {
     const { images, coverImage, category } = data;
 
-    const requestData = {
-      category,
-      coverImage,
-      images,
-    };
+    const formData = new FormData();
+
+    if (images && coverImage) images.unshift(coverImage);
+
+    if (category) formData.append("category", category);
+
+    if (images)
+      for (let i = 0; i < images.length; i++)
+        formData.append("images", images[i]);
+
+    // const requestData = {
+    //   category,
+    //   images,
+    // };
 
     try {
-      const response = await axiosInstance.post("/api/furniture", requestData);
+      const response = await axiosInstance.post("/api/furniture", formData);
       console.log("Furniture created:", response.data);
       refreshData();
       // Handle the response as needed
@@ -118,7 +127,7 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
               >
                 <option value="">Оберіть категорію</option>
                 {isCategoriesLoad &&
-                  data.map((obj: CategoriesType, index: Key) => (
+                  categories.map((obj: CategoriesType, index: Key) => (
                     <option value={obj._id} key={index}>
                       {obj.name}
                     </option>
@@ -143,8 +152,7 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
               accept="image/*"
               onChange={(e) => {
                 const file = e.target.files?.[0];
-                const fileName = file ? file.name : null;
-                field.onChange(fileName);
+                field.onChange(file);
               }}
               onBlur={field.onBlur}
             />
@@ -173,8 +181,7 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
               onChange={(e) => {
                 const files = e.target.files;
                 const fileList = files ? Array.from(files) : [];
-                const fileNames = fileList.map((file) => file.name);
-                field.onChange(fileNames);
+                field.onChange(fileList);
               }}
               onBlur={field.onBlur}
             />
