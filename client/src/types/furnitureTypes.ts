@@ -1,5 +1,5 @@
 export type TypeVariant =
-  | "kitchen"
+  | "kitchens"
   | "wardrobes"
   | "nightstands"
   | "shelves"

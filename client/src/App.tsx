@@ -25,7 +25,7 @@ function App() {
             path="/furniture/kitchens"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemsPage type="kitchen" itemsPerPage={6} />
+                <ItemsPage type="kitchens" itemsPerPage={6} />
               </Suspense>
             }
           />
@@ -33,7 +33,7 @@ function App() {
             path="/furniture/kitchens/:id"
             element={
               <Suspense fallback={<>Loading...</>}>
-                <ItemPage type="kitchen" />
+                <ItemPage type="kitchens" />
               </Suspense>
             }
           />
