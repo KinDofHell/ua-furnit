@@ -8,6 +8,7 @@ import { useDataStore } from "../../hooks/useDataStore";
 
 import FormContainer from "../ui/form/FormContainer";
 import Button from "../ui/buttons/Button";
+import Loading from "../ui/loading/Loading";
 
 interface CategoriesType {
   [key: string]: any;
@@ -18,6 +19,8 @@ interface ImageModalProps {
   onClose: () => void;
   onImageAdd: (files: File[]) => void;
   refreshData: () => void;
+  openLoading: () => void;
+  closeLoading: () => void;
 }
 
 interface ImageFormValues {
@@ -26,7 +29,13 @@ interface ImageFormValues {
   category: string;
 }
 
-const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
+const ImageModal: FC<ImageModalProps> = ({
+  isOpen,
+  onClose,
+  refreshData,
+  openLoading,
+  closeLoading,
+}) => {
   const { handleSubmit, control, reset } = useForm<ImageFormValues>();
   const { categories, fetchCategories } = useDataStore();
 
@@ -37,6 +46,8 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
   }, []);
 
   const onSubmit = async (data: ImageFormValues) => {
+    onClose();
+    openLoading();
     const { images, coverImage, category } = data;
 
     const formData = new FormData();
@@ -49,23 +60,16 @@ const ImageModal: FC<ImageModalProps> = ({ isOpen, onClose, refreshData }) => {
       for (let i = 0; i < images.length; i++)
         formData.append("images", images[i]);
 
-    // const requestData = {
-    //   category,
-    //   images,
-    // };
-
     try {
       const response = await axiosInstance.post("/api/furniture", formData);
       console.log("Furniture created:", response.data);
       refreshData();
-      // Handle the response as needed
     } catch (error) {
       console.error("Error creating furniture:", error);
-      // Handle the error as needed
     }
 
     reset();
-    onClose();
+    closeLoading();
   };
 
   Modal.setAppElement("#root");

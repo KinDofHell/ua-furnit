@@ -20,6 +20,8 @@
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^1.4.0",
     "cloudinary": "^1.37.1",
+    "cloudinary-core": "^2.13.0",
+    "cloudinary-react": "^1.8.1",
     "react-hook-form": "^7.44.3",
     "react-modal": "^3.16.1",
     "react-paginate": "^8.2.0",

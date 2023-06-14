@@ -1,0 +1,25 @@
+@use "../../../globalStyles/globalStyles.scss" as global;
+
+.loading {
+  @include global.flex-config(column, center, center, nowrap);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+height: 100%;
+
+  z-index: 100;
+
+  background-color: rgba(0, 0, 0, 0.8);
+
+  p{
+    font-weight: bold;
+    padding: 10px 50px;
+
+    border-radius: 5px;
+
+    background-color: global.$blue;
+  }
+}

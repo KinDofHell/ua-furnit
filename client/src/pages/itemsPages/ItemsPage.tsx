@@ -12,6 +12,7 @@ import { TypeVariant } from "../../types/furnitureTypes";
 import ItemsSection from "../../components/ui/itemsComponents/ItemsSection";
 import Button from "../../components/ui/buttons/Button";
 import ImageModal from "../../components/modal/ImageModal";
+import Loading from "../../components/ui/loading/Loading";
 
 interface ItemsPageProps extends HTMLAttributes<HTMLDivElement> {
   type: TypeVariant;
@@ -30,6 +31,15 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [images, setImages] = useState<File[]>([]);
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const openLoading = () => {
+    setIsLoading(true);
+  };
+  const closeLoading = () => {
+    setIsLoading(false);
+  };
 
   const handleImageAdd = (newImages: FileList | File[]) => {
     const fileList = Array.from(newImages) as File[];
@@ -54,6 +64,9 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
         className={itemsPageStyles.items}
         currentItems={currentItems}
         type={type}
+        refreshData={refreshData}
+        openLoading={openLoading}
+        closeLoading={closeLoading}
       />
       <Button
         label="+"
@@ -65,7 +78,10 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
         onClose={closeModal}
         onImageAdd={handleImageAdd}
         refreshData={refreshData}
+        openLoading={openLoading}
+        closeLoading={closeLoading}
       />
+      {isLoading && <Loading />}
       <ReactPaginate
         nextLabel=">"
         previousLabel="<"

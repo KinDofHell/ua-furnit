@@ -12,3 +12,7 @@ export type CurrentItemType = {
   coverImage: string;
 };
 export type CurrentItemsType = Array<CurrentItemType>;
+
+export interface FurnitureType {
+  [key: string]: any;
+}

@@ -8,19 +8,28 @@ import {
 
 import ItemSection from "./ItemSection";
 
+import cloudinary from "cloudinary-core";
+
 interface ItemsSectionProps extends HTMLAttributes<HTMLDivElement> {
   type: TypeVariant;
   currentItems: CurrentItemsType;
   className?: string;
-  coverImage: string;
+  refreshData: () => void;
+  openLoading: () => void;
+  closeLoading: () => void;
 }
 
 const ItemsSection: FC<ItemsSectionProps> = ({
   type,
   currentItems,
   className,
-  coverImage,
+  refreshData,
+  openLoading,
+  closeLoading,
 }) => {
+  // @ts-ignore
+  const cloudinaryCore = new cloudinary.Cloudinary({ cloud_name: "dikpympgh" });
+
   return (
     <>
       <section className={className}>
@@ -30,7 +39,11 @@ const ItemsSection: FC<ItemsSectionProps> = ({
             rating={obj.rating}
             type={type}
             key={index}
-            coverImage={obj.coverImage}
+            coverImage={cloudinaryCore.url(obj.coverImage)}
+            isEditable={true}
+            refreshData={refreshData}
+            openLoading={openLoading}
+            closeLoading={closeLoading}
           />
         ))}
       </section>

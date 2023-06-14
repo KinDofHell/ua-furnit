@@ -1,7 +1,7 @@
 @use "../../../globalStyles/globalStyles.scss" as global;
 
 .item__section {
-  @include global.flex-config(row, space-around, center, nowrap);
+  @include global.flex-config(column, space-around, center, nowrap);
 
   @media screen and (min-width: 1024px) {
     width: 60vw;
@@ -37,5 +37,9 @@
     height: 100%;
 
     text-decoration: none;
+  }
+
+  .btnDelete{
+    margin-bottom: 1vw;
   }
 }

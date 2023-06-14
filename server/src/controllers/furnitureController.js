@@ -50,7 +50,7 @@ const uploadCloudinary = async (images) => {
       const result = await cloudinary.uploader.upload(image, {
         folder: "furniture",
       });
-      resultArr.push(result.secure_url);
+      resultArr.push(result.public_id);
       console.log("Result in cloudUpload:" + resultArr);
     }
     return resultArr;
@@ -65,9 +65,10 @@ exports.createFurniture = async (req, res) => {
     const imagesUrl = await Promise.all(await uploadCloudinary(imagesPath));
     console.log("Images Url: " + imagesUrl);
     if (imagesUrl.length > 0) {
+      const coverImage = imagesUrl.shift();
       const furniture = await Furniture.create({
         category: category,
-        coverImage: imagesUrl[0],
+        coverImage: coverImage,
         images: imagesUrl,
       });
       res.status(201).json(furniture);
@@ -78,13 +79,6 @@ exports.createFurniture = async (req, res) => {
 };
 
 exports.updateFurniture = async (req, res) => {
-  await Promise.all(validateFurniture.map((validator) => validator.run(req)));
-
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
-
   try {
     const updatedFurniture = await Furniture.findByIdAndUpdate(
       req.params.id,
@@ -107,6 +101,12 @@ exports.deleteFurniture = async (req, res) => {
     const deletedFurniture = await Furniture.findByIdAndDelete(req.params.id);
     if (!deletedFurniture)
       return res.status(404).json({ error: "Furniture not found!" });
+
+    const { coverImage, images } = deletedFurniture;
+
+    await cloudinary.uploader.destroy(coverImage);
+    for (const image of images) await cloudinary.uploader.destroy(image);
+
     res.json(deletedFurniture);
   } catch (error) {
     console.error("Error deleting furniture:", error);
