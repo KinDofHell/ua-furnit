@@ -3,6 +3,7 @@ const { Furniture, Category } = require("../models/exports");
 
 const cloudinary = require("cloudinary").v2;
 const formidable = require("formidable");
+const imageType = require("image-type");
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -52,7 +53,12 @@ const uploadCloudinary = async (images) => {
 
   try {
     for (const image of images) {
-      const dataUrl = `data:image/*;base64,${image}`;
+      const imageBuffer = Buffer.from(image, "base64");
+      const format = imageType(imageBuffer)?.ext;
+      if (!format) {
+        throw new Error("Invalid image format");
+      }
+      const dataUrl = `data:image/jpeg;base64,${image}`;
       const result = await cloudinary.uploader.upload(dataUrl, {
         folder: "furniture",
       });
