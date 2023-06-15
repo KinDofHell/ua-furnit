@@ -7,8 +7,8 @@
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/server/src/controllers/questionController.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/models/questionSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/vercel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/categoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/categoryController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.js" afterDir="false" />
@@ -163,7 +163,7 @@
       <workItem from="1686655491839" duration="22000" />
       <workItem from="1686736791947" duration="6998000" />
       <workItem from="1686743833587" duration="132000" />
-      <workItem from="1686820695794" duration="3040000" />
+      <workItem from="1686820695794" duration="4010000" />
     </task>
     <servers />
   </component>
