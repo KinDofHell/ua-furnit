@@ -17,7 +17,14 @@ const {
   deleteFurniture,
   getAllFurniture,
   getFurniture,
+  getFurnitureByValue,
 } = require("./controllers/furnitureController");
+const {
+  createQuestion,
+  deleteQuestion,
+  getAllQuestions,
+  getQuestionsBySimilarWord,
+} = require("./controllers/questionController");
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -48,6 +55,13 @@ app.patch("/api/furniture/:id", updateFurniture);
 app.delete("/api/furniture/:id", deleteFurniture);
 app.get("/api/furniture", getAllFurniture);
 app.get("/api/furniture/:id", getFurniture);
+app.get("/api/furniture/category/:value", getFurnitureByValue);
+
+//question
+app.post("/api/question/", createQuestion);
+app.delete("/api/question/:id", deleteQuestion);
+app.get("/api/question/", getAllQuestions);
+app.get("/api/question/find/:find", getQuestionsBySimilarWord);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);

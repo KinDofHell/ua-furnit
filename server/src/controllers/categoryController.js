@@ -1,17 +1,21 @@
 const { validationResult, body } = require("express-validator");
 const { Category } = require("../models/exports");
 
+const validateCategory = [
+  body("name").notEmpty().trim().withMessage("Name is required!"),
+  body("value").notEmpty().trim().withMessage("Value is required!"),
+];
+
 exports.createCategory = async (req, res) => {
-  await body("name")
-    .notEmpty()
-    .trim()
-    .withMessage("Name is required!")
-    .run(req);
+  await Promise.all(validateCategory.map((validation) => validation.run(req)));
 
   const errors = validationResult(req);
 
   if (!errors.isEmpty())
-    return res.status(400).json({ errors: errors.array() });
+    return res
+      .status(400)
+      .json({ errors: errors.array({ onlyFirstError: true }) });
+
   try {
     const category = await Category.create(req.body);
     res.status(201).json(category);
@@ -21,16 +25,14 @@ exports.createCategory = async (req, res) => {
 };
 
 exports.updateCategory = async (req, res) => {
-  await body("name")
-    .notEmpty()
-    .trim()
-    .isLength({ min: 3, max: 20 })
-    .withMessage("Name is required!");
+  await Promise.all(validateCategory.map((validation) => validation.run(req)));
 
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+
+  if (!errors.isEmpty())
+    return res
+      .status(400)
+      .json({ errors: errors.array({ onlyFirstError: true }) });
 
   try {
     const updatedCategory = await Category.findByIdAndUpdate(

@@ -1,5 +1,5 @@
 const { validationResult, body } = require("express-validator");
-const { Furniture } = require("../models/exports");
+const { Furniture, Category } = require("../models/exports");
 
 const cloudinary = require("cloudinary").v2;
 const formidable = require("formidable");
@@ -136,5 +136,27 @@ exports.getFurniture = async (req, res) => {
   } catch (error) {
     console.error("Error: ", error);
     res.status(500).json({ error: "Error retrieving furniture!" });
+  }
+};
+
+exports.getFurnitureByValue = async (req, res) => {
+  try {
+    const { value } = req.params;
+    const category = await Category.findOne({ value });
+    if (category) {
+      const furniture = await Furniture.find({
+        category: category._id,
+      });
+      if (!furniture) {
+        res.status(404).json({ error: "Furniture not found" });
+      } else {
+        res.json(furniture);
+      }
+    } else {
+      res.status(404).json({ error: "Category not found" });
+    }
+  } catch (error) {
+    console.error("Error finding furniture:", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 };

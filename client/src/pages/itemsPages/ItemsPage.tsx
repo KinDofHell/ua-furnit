@@ -23,8 +23,10 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
   const { data, fetchData } = useDataStore();
 
   useEffect(() => {
-    fetchData("/api/furniture/").then((res) => console.log("Data loaded!"));
-  }, []);
+    fetchData(`/api/furniture/category/${type}`).then((res) =>
+      console.log("Data loaded!")
+    );
+  }, [type]);
 
   const [itemOffset, setItemOffset] = useState<number>(0);
   const [currentItems, pageCount] = Paginate(data, itemsPerPage, itemOffset);
@@ -55,7 +57,9 @@ const ItemsPage: FC<ItemsPageProps> = ({ type, itemsPerPage }) => {
   };
 
   const refreshData = () => {
-    fetchData("/api/furniture").then(() => console.log("Data Loaded!"));
+    fetchData(`/api/furniture/category/${type}`).then(() =>
+      console.log("Data Loaded!")
+    );
   };
 
   return (
