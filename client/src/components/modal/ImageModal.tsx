@@ -24,8 +24,8 @@ interface ImageModalProps {
 }
 
 interface ImageFormValues {
-  images: FileList | null;
-  coverImage: File | null;
+  images: string[] | null;
+  coverImage: string | null;
   category: string;
 }
 
@@ -45,24 +45,6 @@ const ImageModal: FC<ImageModalProps> = ({
     fetchCategories("/api/category/").then(() => setIsCategoriesLoad(true));
   }, []);
 
-  const convertImageToBase64 = (file: File) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-
-      reader.onload = () => {
-        // @ts-ignore
-        const base64Data = reader.result.split(",")[1];
-        resolve(base64Data);
-      };
-
-      reader.onerror = (error) => {
-        reject(error);
-      };
-
-      reader.readAsDataURL(file);
-    });
-  };
-
   const onSubmit = async (data: ImageFormValues) => {
     onClose();
     openLoading();
@@ -70,22 +52,13 @@ const ImageModal: FC<ImageModalProps> = ({
 
     const formData = new FormData();
 
-    if (images && coverImage) {
-      formData.append("images", coverImage);
-      for (let i = 0; i < images.length; i++) {
-        formData.append("images", images[i]);
-      }
-    }
+    if (images && coverImage) images.unshift(coverImage);
 
     if (category) formData.append("category", category);
 
-    if (images) {
-      for (let i = 0; i < images.length; i++) {
-        const base64Data = await convertImageToBase64(images[i]);
-        // @ts-ignore
-        formData.append("images", base64Data);
-      }
-    }
+    if (images)
+      for (let i = 0; i < images.length; i++)
+        formData.append("images", images[i]);
 
     try {
       const response = await axiosInstance.post("/api/furniture", formData);

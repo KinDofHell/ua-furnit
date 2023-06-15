@@ -12,7 +12,7 @@ cloudinary.config({
 
 const formParser = async (req) => {
   try {
-    const imagesData = [];
+    const imagesPath = [];
     let category = "";
     const form = formidable({ multiples: true });
 
@@ -24,24 +24,17 @@ const formParser = async (req) => {
         }
         console.log("field: ", fields.category);
         category = fields.category;
-
-        if (fields.images) {
-          if (Array.isArray(fields.images)) {
-            fields.images.forEach((image) => {
-              console.log("Image data: " + image);
-              imagesData.push(image);
-            });
-          } else {
-            console.log("Image data: " + fields.images);
-            imagesData.push(fields.images);
-          }
-        }
+        files.images.forEach((image) => {
+          const path = image.filepath;
+          console.log("Path in controller: " + path);
+          imagesPath.push(path);
+        });
 
         resolve();
       });
     });
 
-    return [imagesData, category];
+    return [imagesPath, category];
   } catch (err) {
     console.log(err);
   }
@@ -50,14 +43,15 @@ const formParser = async (req) => {
 const uploadCloudinary = async (images) => {
   const resultArr = [];
 
+  console.log("Images in uploadCloudinary:" + images);
   try {
     for (const image of images) {
-      const dataUrl = `data:image/jpg;base64,${image}`;
-      const result = await cloudinary.uploader.upload(dataUrl, {
+      console.log("Images in uploadCloudinary single:" + image);
+      const result = await cloudinary.uploader.upload(image, {
         folder: "furniture",
       });
       resultArr.push(result.public_id);
-      console.log("Result in cloudUpload:", resultArr);
+      console.log("Result in cloudUpload:" + resultArr);
     }
     return resultArr;
   } catch (err) {
