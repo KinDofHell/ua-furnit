@@ -2,6 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   baseURL: "https://ua-furnit-api.vercel.app/",
+  withCredentials: true,
 });
 
 instance.interceptors.request.use((config) => {

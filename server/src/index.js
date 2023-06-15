@@ -40,7 +40,12 @@ mongoose
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://ua-furnit.vercel.app",
+    credentials: true,
+  })
+);
 
 //category
 app.post("/api/category", createCategory);
