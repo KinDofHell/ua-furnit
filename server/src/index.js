@@ -38,20 +38,21 @@ mongoose
     console.error("Error connecting to MongoDB", error);
   });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(
-  express.static(__dirname, {
-    extensions: ["js"],
-    type: "application/javascript",
-  })
-);
 app.use(
   cors({
     origin: "https://ua-furnit.vercel.app",
     credentials: true,
   })
 );
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(
+//   express.static(__dirname, {
+//     extensions: ["js"],
+//     type: "application/javascript",
+//   })
+// );
 
 //category
 app.post("/api/category", createCategory);
