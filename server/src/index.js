@@ -41,6 +41,12 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
+  express.static(__dirname, {
+    extensions: ["js"],
+    type: "application/javascript",
+  })
+);
+app.use(
   cors({
     origin: "https://ua-furnit.vercel.app",
     credentials: true,
