@@ -8,7 +8,7 @@
       <change afterPath="$PROJECT_DIR$/server/src/controllers/questionController.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/models/questionSchema.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/vercel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/categoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/categoryController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.js" afterDir="false" />
@@ -21,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -163,7 +163,7 @@
       <workItem from="1686655491839" duration="22000" />
       <workItem from="1686736791947" duration="6998000" />
       <workItem from="1686743833587" duration="132000" />
-      <workItem from="1686820695794" duration="4010000" />
+      <workItem from="1686820695794" duration="4137000" />
     </task>
     <servers />
   </component>
