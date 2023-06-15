@@ -47,12 +47,12 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(
-//   express.static(__dirname, {
-//     extensions: ["js"],
-//     type: "application/javascript",
-//   })
-// );
+app.use(
+  express.static(__dirname, {
+    extensions: ["js"],
+    type: "application/javascript",
+  })
+);
 
 //category
 app.post("/api/category", createCategory);
