@@ -52,7 +52,7 @@ const uploadCloudinary = async (images) => {
 
   try {
     for (const image of images) {
-      const dataUrl = `data:image/jpeg;base64,${image}`;
+      const dataUrl = `data:image/*;base64,${image}`;
       const result = await cloudinary.uploader.upload(dataUrl, {
         folder: "furniture",
       });
