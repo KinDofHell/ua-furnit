@@ -42,6 +42,9 @@ app.use(
   cors({
     origin: "https://ua-furnit.vercel.app",
     credentials: true,
+    allowedHeaders:
+      "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+    methods: "GET,OPTIONS,PATCH,DELETE,POST,PUT",
   })
 );
 
