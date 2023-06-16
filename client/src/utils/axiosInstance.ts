@@ -1,12 +1,13 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://ua-furnit-api.vercel.app/",
-  withCredentials: true,
+  // baseURL: "https://ua-furnit-api.vercel.app/",
+  // withCredentials: true,
+  baseURL: "http://localhost:3000/",
 });
 
 instance.interceptors.request.use((config) => {
-  config.headers.Authorization = window.localStorage.getItem("token");
+  config.headers.authorization = window.localStorage.getItem("token");
   return config;
 });
 

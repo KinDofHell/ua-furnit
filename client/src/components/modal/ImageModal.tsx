@@ -8,7 +8,6 @@ import { useDataStore } from "../../hooks/useDataStore";
 
 import FormContainer from "../ui/form/FormContainer";
 import Button from "../ui/buttons/Button";
-import Loading from "../ui/loading/Loading";
 
 interface CategoriesType {
   [key: string]: any;

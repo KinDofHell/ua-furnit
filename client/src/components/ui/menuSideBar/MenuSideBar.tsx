@@ -4,21 +4,29 @@ import {
   FC,
   HTMLAttributes,
   MouseEventHandler,
+  useContext,
   useEffect,
   useState,
 } from "react";
+import LoginModal from "../../modal/LoginModal";
+import { AuthContext } from "../../../layouts/authContext/AuthContext";
 
 interface MenuSidebarProps extends HTMLAttributes<HTMLDivElement> {
-  isAuth: boolean;
   isOpen: boolean;
   onClickBurgerHandler: MouseEventHandler;
 }
 
 const MenuSideBar: FC<MenuSidebarProps> = ({
-  isAuth,
   isOpen,
   onClickBurgerHandler,
 }) => {
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+
+  const onClickLogout = () => {
+    logout();
+  };
+
   return (
     <aside
       className={`${menuSideBareStyles.menu__sidebar} ${
@@ -49,10 +57,24 @@ const MenuSideBar: FC<MenuSidebarProps> = ({
       </section>
       <section className={menuSideBareStyles.admin}>
         <span></span>
-        {isAuth && (
-          <Button label="Увійти" className={menuSideBareStyles.button__login} />
+        {!isAuthenticated ? (
+          <Button
+            label="Увійти"
+            className={menuSideBareStyles.button__login}
+            onClick={() => setLoginModalOpen(true)}
+          />
+        ) : (
+          <Button
+            label="Вийти"
+            className={menuSideBareStyles.button__login}
+            onClick={onClickLogout}
+          />
         )}
       </section>
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setLoginModalOpen(false)}
+      />
     </aside>
   );
 };

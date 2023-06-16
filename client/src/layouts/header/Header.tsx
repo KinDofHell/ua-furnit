@@ -32,7 +32,6 @@ const Header = () => {
         <span></span>
       </div>
       <MenuSideBar
-        isAuth={isAuth}
         isOpen={isBurgerOpened}
         onClickBurgerHandler={onClickBurgerHandler}
       />

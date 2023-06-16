@@ -1,9 +1,11 @@
 import userStyles from "./Headers.module.scss";
 import reserveImg from "../../assets/reserveImg.jpg";
 
-import { FC, HTMLAttributes, useState } from "react";
+import { FC, HTMLAttributes, useContext, useState } from "react";
+import { AuthContext } from "../authContext/AuthContext";
 
 import Button from "../../components/ui/buttons/Button";
+import LoginModal from "../../components/modal/LoginModal";
 
 interface UserProps extends HTMLAttributes<HTMLDivElement> {
   avatarSource?: string;
@@ -11,7 +13,9 @@ interface UserProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const User: FC<UserProps> = ({ avatarSource, isAuth }) => {
-  const [isSignedIn, setIsSignedIn] = useState<boolean>(isAuth);
+  const { isAuthenticated, logout } = useContext(AuthContext);
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+  console.log(isAuthenticated);
 
   return (
     <div className={userStyles.user}>
@@ -21,24 +25,27 @@ const User: FC<UserProps> = ({ avatarSource, isAuth }) => {
           backgroundImage: `url(${avatarSource ? avatarSource : reserveImg})`,
         }}
       >
-        {isSignedIn ? (
+        {isAuthenticated ? (
           <Button
             label="Log Out"
             isDanger={true}
             className={userStyles.login}
-            onClick={() => setIsSignedIn(!isSignedIn)}
+            onClick={logout}
             style={{ fontSize: "18px" }}
           />
         ) : (
           <Button
             label="Sign In"
-            // link="/login"
             isSuccess={true}
             className={userStyles.login}
-            onClick={() => setIsSignedIn(!isSignedIn)}
+            onClick={() => setLoginModalOpen(true)}
           />
         )}
       </div>
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setLoginModalOpen(false)}
+      />
     </div>
   );
 };

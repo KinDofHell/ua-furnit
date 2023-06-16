@@ -24,11 +24,11 @@
     background-color: global.$blue;
 
     position: fixed;
-    top: 82vh;
+    bottom: 15vh;
     right: 55px;
 
     @media screen and (max-width: 768px){
-      top: 75vh;
+      bottom: 15vh;
       right: 10px;
     }
 

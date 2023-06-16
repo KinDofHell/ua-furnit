@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/modal/LoginModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/authContext/AuthContext.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/controllers/questionController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/roleController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/middlewares/isAdmin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/middlewares/isAuth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/RoleSchema.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/models/questionSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/models/userSchema.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/vercel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/modal/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modal/ImageModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemPage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/categoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/categoryController.js" afterDir="false" />
@@ -81,7 +96,7 @@
       <recent name="D:\VS CODE\Master React\client" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.start">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -166,7 +181,8 @@
       <workItem from="1686655491839" duration="22000" />
       <workItem from="1686736791947" duration="6998000" />
       <workItem from="1686743833587" duration="132000" />
-      <workItem from="1686820695794" duration="13416000" />
+      <workItem from="1686820695794" duration="14220000" />
+      <workItem from="1686909093611" duration="9694000" />
     </task>
     <servers />
   </component>
