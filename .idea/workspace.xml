@@ -5,33 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/modal/LoginModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/layouts/authContext/AuthContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/questionController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/roleController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/middlewares/isAdmin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/middlewares/isAuth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/RoleSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/questionSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/userSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/vercel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/modal/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modal/ImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/menuSideBar/MenuSideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/header/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/header/User.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemPage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemPage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/axiosInstance.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/categoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/categoryController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/furnitureController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/categorySchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/categorySchema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/exports.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/exports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/authContext/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/authContext/AuthContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,28 +30,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.16.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.16.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/VS CODE/webpack&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\wildg\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\VS CODE\\Master React\\client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "18.7.0",
+    "javascript.nodejs.core.library.typings.version": "18.7.0",
+    "last_opened_file_path": "D:/Work/ua-furnit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\wildg\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "D:\\Work\\ua-furnit\\client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -96,7 +73,7 @@
       <recent name="D:\VS CODE\Master React\client" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -107,7 +84,7 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start server" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="start" />
       <node-interpreter value="project" />
@@ -115,8 +92,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="npm.start server" />
       <item itemvalue="npm.dev" />
-      <item itemvalue="npm.start" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -183,6 +160,9 @@
       <workItem from="1686743833587" duration="132000" />
       <workItem from="1686820695794" duration="14220000" />
       <workItem from="1686909093611" duration="9694000" />
+      <workItem from="1687260859609" duration="10000" />
+      <workItem from="1687260871496" duration="655000" />
+      <workItem from="1687272844296" duration="2095000" />
     </task>
     <servers />
   </component>
