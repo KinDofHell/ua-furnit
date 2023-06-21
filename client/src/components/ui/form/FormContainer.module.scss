@@ -28,4 +28,16 @@
       margin-bottom: 1vh;
     }
   }
+
+  input[type="text"], input[type="password"]{
+    font-size: 20px;
+    padding: 2px;
+
+    background-color: transparent;
+
+    border: 1px solid white;
+    border-radius: 5px;
+
+    text-align: center;
+  }
 }

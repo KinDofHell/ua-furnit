@@ -5,3 +5,13 @@
 
   width: 80%;
 }
+
+.register_btn{
+  font-size: 16px;
+  background-color: global.$blue;
+  transition: background-color 0.3s ease-in;
+
+  &:hover{
+     background-color: global.$dark-blue;
+  }
+}
