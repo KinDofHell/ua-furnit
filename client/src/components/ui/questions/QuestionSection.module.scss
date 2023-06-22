@@ -1,0 +1,52 @@
+@use "../../../globalStyles/globalStyles.scss" as global;
+
+.questionSection {
+
+  border: 1px solid white;
+
+  padding: 20px 2px;
+
+  border-radius: 5px;
+
+  &:not(:last-child){
+    margin-bottom: 5vh;
+  }
+
+  .question, .answer {
+    padding: 5px 10px;
+  }
+
+  .question {
+    float: right;
+    text-align: left;
+
+    @media screen and (max-width: 768px){
+      max-width: 70%;
+    }
+
+    background-color: global.$blue;
+
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .answer {
+    float: left;
+    text-align: left;
+
+    margin-top: 5vh;
+
+    @media screen and (min-width: 768px){
+      width: 60%;
+    }
+
+    width: 80%;
+
+    background-color: global.$gray;
+
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}

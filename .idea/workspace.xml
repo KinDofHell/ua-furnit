@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775bf4d4-6b26-41ad-ac9b-f5c915b8de1c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/questions/QuestionSection.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/questions/QuestionSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Questions.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/modal/ImageModal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modal/ImageModal.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/modal/LoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/modal/LoginModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/form/FormContainer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/form/FormContainer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ui/itemsComponents/ItemsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/authContext/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/authContext/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/itemsPages/ItemsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Questions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Questions.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <recent name="D:\VS CODE\Master React\client" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start server">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -170,7 +167,8 @@
       <workItem from="1687260859609" duration="10000" />
       <workItem from="1687260871496" duration="655000" />
       <workItem from="1687272844296" duration="2184000" />
-      <workItem from="1687333239463" duration="4250000" />
+      <workItem from="1687333239463" duration="4385000" />
+      <workItem from="1687431060122" duration="2527000" />
     </task>
     <servers />
   </component>

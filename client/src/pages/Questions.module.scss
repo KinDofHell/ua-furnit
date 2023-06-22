@@ -1,0 +1,16 @@
+@use "../globalStyles/globalStyles.scss" as global;
+
+.mainPage{
+  @include global.flex-config(row, center, center, nowrap);
+
+  width: 90%;
+
+  @media screen and (min-width: 768px){
+    width: 80%;
+  }
+
+  .questions {
+    @include global.flex-config(column, space-around, center, nowrap);
+  }
+}
+

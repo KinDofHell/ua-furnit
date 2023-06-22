@@ -18,11 +18,12 @@ interface LoginModalProps {
 interface UserFormValues {
     login: string | null;
     password: string | null;
+    repeatPassword: string | null;
 }
 
 const LoginModal: FC<LoginModalProps> = ({isOpen, onClose}) => {
     const {login} = useContext(AuthContext);
-    const {handleSubmit, control, reset} = useForm<UserFormValues>();
+    const {handleSubmit, control, reset, getValues} = useForm<UserFormValues>();
     const [isRegister, setIsRegister] = useState<boolean>(false);
 
     const onSubmit = async (data: UserFormValues) => {
@@ -32,6 +33,11 @@ const LoginModal: FC<LoginModalProps> = ({isOpen, onClose}) => {
     };
 
     const onSubmitRegister = async (data: UserFormValues) => {
+        if (isRegister)
+            if (data.password !== data.repeatPassword) {
+                alert("Паролі не співпадають");
+                return;
+            }
         await axiosInstance.post("/register", {login: data.login, password: data.password})
         reset();
         handleOnChangeForm();
@@ -135,6 +141,40 @@ const LoginModal: FC<LoginModalProps> = ({isOpen, onClose}) => {
                         </section>
                     )}
                 />
+                {isRegister && <Controller
+                    name="repeatPassword"
+                    control={control}
+                    defaultValue=""
+                    rules={{
+                        required: "Це поле обов'язкове!",
+                        minLength: {
+                            value: 4,
+                            message: "Мінімум 4 символів!",
+                        },
+                        validate: {
+                            matchesPassword: (value) => {
+                                const {password} = getValues();
+                                return value === password || "Паролі не збігаються!";
+                            },
+                        },
+                    }}
+                    render={({
+                                 field: {onChange, onBlur, value},
+                                 fieldState: {error},
+                             }) => (
+                        <section>
+                            <input
+                                type="password"
+                                id="repeatPassword"
+                                placeholder="Повторіть пароль..."
+                                onChange={onChange}
+                                onBlur={onBlur}
+                                value={value! || ""}
+                            />
+                            {error && <p>{error.message}</p>}
+                        </section>
+                    )}
+                />}
                 <section className={imageModalStyles.control_btns}>
                     <Button label={!isRegister ? "Авторизуватися" : "Зареєструватися"} type="submit" isSuccess={true}/>
                     <Button label="Відмінити" onClick={onClose} isDanger={true}/>
