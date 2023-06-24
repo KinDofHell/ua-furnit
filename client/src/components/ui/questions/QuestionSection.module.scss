@@ -1,12 +1,9 @@
 @use "../../../globalStyles/globalStyles.scss" as global;
 
 .questionSection {
-
-  border: 1px solid white;
-
   padding: 20px 2px;
 
-  border-radius: 5px;
+  width: 100%;
 
   &:not(:last-child){
     margin-bottom: 5vh;
@@ -24,6 +21,8 @@
       max-width: 70%;
     }
 
+    max-width: 45%;
+
     background-color: global.$blue;
 
     border-bottom-left-radius: 10px;
@@ -37,11 +36,12 @@
 
     margin-top: 5vh;
 
-    @media screen and (min-width: 768px){
-      width: 60%;
+    @media screen and (max-width: 768px){
+      max-width: 70%;
     }
 
-    width: 80%;
+    max-width: 45%;
+
 
     background-color: global.$gray;
 

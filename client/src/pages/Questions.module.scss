@@ -1,7 +1,7 @@
 @use "../globalStyles/globalStyles.scss" as global;
 
 .mainPage{
-  @include global.flex-config(row, center, center, nowrap);
+  @include global.flex-config(column, center, center, nowrap);
 
   width: 90%;
 
@@ -9,8 +9,46 @@
     width: 80%;
   }
 
+  .search{
+    @include global.flex-config(row, space-between, center, nowrap);
+
+    margin-bottom: 2vh;
+
+    width: 400px;
+
+    input{
+      border: none;
+      border-radius: 5px;
+
+      font-size: 20px;
+
+      width: 30%;
+
+      background-color: global.$light-blue;
+      color: black;
+
+      padding: 5px;
+    }
+
+    .btnFind{
+      background-color: global.$gray;
+
+      font-size: 16px;
+
+      transition: background-color 0.3s ease-in;
+      &:hover{
+        background-color: gray;
+      }
+    }
+  }
+
   .questions {
     @include global.flex-config(column, space-around, center, nowrap);
+
+    width: 100%;
+
+    border: 1px solid white;
+    border-radius: 5px;
   }
 }
 
