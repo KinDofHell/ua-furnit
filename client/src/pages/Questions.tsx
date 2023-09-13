@@ -60,14 +60,6 @@ const Questions = () => {
               key={index}
             />
           ))}
-        <QuestionSection
-          question="fsdkfsldf sdkfsd sdfs kf sdfsdfksj, sdfkjsdf - fkjfsefkef? fsdkfsldf sdkfsd sdfs kf sdfsdfksj, sdfkjsdf - fkjfsefkef?"
-          answer="sdkfjskdf, dfskdflsdf ssdk flsdfl ksdfsk, sdfksdflwlv jskdkskf fsdkfsldf sdkfsd sdfs kf sdfsdfksj, sdfkjsdf - fkjfsefkef?"
-        />
-        <QuestionSection
-          question="fsdkfsldf sdkfsd sdfs kf sdfsdfksj, sdfkjsdf - fkjfsefkef? fsdkfsldf sdkfsd sdfs kf sdfsdfksj, sdfkjsdf - fkjfsefkef?"
-          answer="sdkfjskdf, dfskdflsdf ssdk flsdfl ksdfsk, sdfksdflwlv jskdkskf fsdkfsldf sdkfsd sdfs kf sdfsdfksj, sdfkjsdf - fkjfsefkef?"
-        />
       </section>
     </main>
   );

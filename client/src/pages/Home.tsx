@@ -18,6 +18,8 @@ const Home = () => {
 
   const touchStartXRef = useRef<number | null>(null);
 
+  const slideStep: number = 3;
+
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     touchStartXRef.current = event.touches[0].clientX;
   };
@@ -26,7 +28,7 @@ const Home = () => {
     if (direction === "prev") {
       setCurrentSlide(0);
     } else if (direction === "next") {
-      setCurrentSlide(3);
+      setCurrentSlide(slideStep);
     }
   };
 
@@ -80,7 +82,7 @@ const Home = () => {
 
   useEffect(() => {
     setHideLeft(currentSlide === 0);
-    setHideRight(currentSlide === 3);
+    setHideRight(currentSlide === slideStep);
   }, [currentSlide]);
 
   return (
@@ -98,14 +100,16 @@ const Home = () => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {slideData.slice(currentSlide, currentSlide + 3).map((slide, index) => (
-          <CategorySection
-            key={index}
-            title={slide.title}
-            link={slide.link}
-            background={slide.background}
-          />
-        ))}
+        {slideData
+          .slice(currentSlide, currentSlide + slideStep)
+          .map((slide, index) => (
+            <CategorySection
+              key={index}
+              title={slide.title}
+              link={slide.link}
+              background={slide.background}
+            />
+          ))}
       </section>
       <div
         id="right"
