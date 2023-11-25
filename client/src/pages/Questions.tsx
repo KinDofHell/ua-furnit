@@ -6,26 +6,30 @@ import { Key, useEffect, useState } from "react";
 import { useDataStore } from "../hooks/useDataStore";
 
 import { FurnitureType } from "../types/furnitureTypes";
+import { useDebounce } from "../hooks/useDebounce";
 
 const Questions = () => {
   const [word, setWord] = useState<string>("");
-  const [found, setFound] = useState<boolean>(false);
   const { questions, fetchQuestionsByWord } = useDataStore();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [found, setFound] = useState<boolean>(false);
+  const debouncedWord = useDebounce(word, 500);
 
   useEffect(() => {
     fetchQuestionsByWord(`/api/question/`).then((res) => setIsLoaded(true));
   }, []);
 
-  const handleSearchOnClick = () => {
-    if (word) {
+  useEffect(() => {
+    if (debouncedWord) {
       setIsLoaded(false);
-      fetchQuestionsByWord(`/api/question/find/${word}`).then((res) => {
-        setIsLoaded(true);
-        setFound(true);
-      });
+      fetchQuestionsByWord(`/api/question/find/${debouncedWord}`).then(
+        (res) => {
+          setIsLoaded(true);
+          setFound(true);
+        }
+      );
     }
-  };
+  }, [debouncedWord, fetchQuestionsByWord]);
 
   const refreshData = () => {
     fetchQuestionsByWord(`/api/question/`).then((res) => setIsLoaded(true));
@@ -43,11 +47,6 @@ const Questions = () => {
           type="text"
           id="questionSearch"
           onChange={(e) => setWord(e.target.value)}
-        />
-        <Button
-          label="Знайти"
-          className={questionsStyles.btnFind}
-          onClick={handleSearchOnClick}
         />
         {found && <Button label="X" isDanger={true} onClick={refreshData} />}
       </section>
