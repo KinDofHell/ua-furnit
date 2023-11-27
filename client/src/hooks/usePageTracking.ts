@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { lastPageState } from "../recoil/lastPageAtom";
 
 export const usePageTracking = (): void => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [lastPage, setLastPage] = useRecoilState(lastPageState);
   const [isReturning, setIsReturning] = useState(false);
 
   useEffect(() => {
     if (!isReturning) {
-      const savedPage = localStorage.getItem("lastPage");
-
       const timeoutId = setTimeout(() => {
-        if (savedPage && savedPage !== location.pathname) {
+        if (lastPage && lastPage !== location.pathname) {
           const shouldReturn = window.confirm(
-            "Хочете повернутися на попередню сторінку?"
+            "Хочете повернутися на попередню сторінку?",
           );
           if (shouldReturn) {
             setIsReturning(true);
-            navigate(savedPage);
+            navigate(lastPage);
           }
         }
       }, 1000);
@@ -27,8 +28,7 @@ export const usePageTracking = (): void => {
   }, [location, navigate, isReturning]);
 
   useEffect(() => {
-    localStorage.setItem("lastPage", location.pathname);
-
+    setLastPage(location.pathname);
     setIsReturning(false);
-  }, [location]);
+  }, [location, setLastPage]);
 };

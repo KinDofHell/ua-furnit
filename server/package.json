@@ -15,7 +15,7 @@
     "multer-storage-cloudinary": "^4.0.0"
   },
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "name": "server",
   "version": "1.0.0",

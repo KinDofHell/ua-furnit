@@ -8,6 +8,7 @@ import Header from "./layouts/header/Header";
 import Main from "./layouts/main/Main";
 import Home from "./pages/Home";
 import { usePageTracking } from "./hooks/usePageTracking";
+
 const Contacts = lazy(() => import("./pages/Contacts"));
 const Questions = lazy(() => import("./pages/Questions"));
 
